@@ -1,9 +1,11 @@
+-- if you found this hi ig idc that you see dis cuz ai gen 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lavaware External Download</title>
+<title>Lavaware - Multi-Game Tools</title>
 <style>
     * {
         box-sizing: border-box;
@@ -43,7 +45,7 @@
             0 20px 40px rgba(0,0,0,0.6),
             inset 0 1px 0 rgba(255,255,255,0.1);
         text-align: center;
-        max-width: 600px;
+        max-width: 700px;
         width: 90%;
         animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
@@ -79,6 +81,66 @@
         color: #cccccc;
         margin-bottom: 30px;
         font-weight: 300;
+    }
+    
+    /* Tab Styles */
+    .tabs {
+        display: flex;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgba(0,0,0,0.2);
+        border: 1px solid rgba(255, 76, 76, 0.1);
+    }
+    
+    .tab {
+        flex: 1;
+        padding: 15px 25px;
+        background: transparent;
+        color: #ccc;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .tab::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #ff4c4c, #ff6b6b);
+        transition: width 0.3s ease;
+    }
+    
+    .tab:hover {
+        background: rgba(255, 76, 76, 0.1);
+        color: #fff;
+    }
+    
+    .tab.active {
+        background: linear-gradient(135deg, rgba(255, 76, 76, 0.2), rgba(255, 107, 107, 0.2));
+        color: #ff4c4c;
+        text-shadow: 0 0 10px rgba(255, 76, 76, 0.3);
+    }
+    
+    .tab.active::before {
+        width: 100%;
+    }
+    
+    /* Tab Content */
+    .tab-content {
+        display: none;
+        animation: fadeIn 0.5s ease;
+    }
+    
+    .tab-content.active {
+        display: block;
     }
     
     h2 {
@@ -182,6 +244,29 @@
         transform: translateY(0);
     }
     
+    .roblox-btn {
+        background: linear-gradient(135deg, #00b2ff, #0099e6);
+        box-shadow: 0 8px 25px rgba(0, 178, 255, 0.3);
+    }
+    
+    .roblox-btn:hover {
+        background: linear-gradient(135deg, #0099e6, #0080cc);
+        box-shadow: 0 12px 35px rgba(0, 178, 255, 0.4);
+    }
+    
+    .roblox-features li {
+        border-left-color: #00b2ff;
+        background: rgba(0, 178, 255, 0.05);
+    }
+    
+    .roblox-features li:hover {
+        border-left-color: #0099e6;
+    }
+    
+    .roblox-features li::before {
+        background: rgba(0, 178, 255, 0.1);
+    }
+    
     a {
         color: #ff4c4c;
         text-decoration: none;
@@ -225,6 +310,15 @@
         }
     }
     
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
     @media (max-width: 600px) {
         .container {
             padding: 40px 30px;
@@ -244,6 +338,11 @@
             padding: 10px 15px;
             font-size: 0.95rem;
         }
+        
+        .tab {
+            padding: 12px 15px;
+            font-size: 1rem;
+        }
     }
     
     @media (max-width: 400px) {
@@ -259,27 +358,105 @@
             padding: 12px 25px;
             font-size: 1rem;
         }
+        
+        .tab {
+            padding: 10px 12px;
+            font-size: 0.9rem;
+        }
     }
 </style>
 </head>
 <body>
     <div class="container">
         <h1>Lavaware</h1>
-        <p class="subtitle">The Best Free CS2 External</p>
+        <p class="subtitle">Multi-Game Tool Suite</p>
         
-        <h2>Features</h2>
-        <ul>
-            <li>✔ Clean & simple user interface</li>
-            <li>✔ Lightweight and fast performance</li>
-            <li>✔ Secure & (probably) undetected</li>
-            <li>✔ Frequent updates and improvements</li>
-        </ul>
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('cs2')">CS2 External</button>
+            <button class="tab" onclick="showTab('roblox')">Roblox Scripts</button>
+        </div>
         
-        <button class="download-btn" onclick="window.location.href='https://rekonise.com/lavaware-rez5n';">
-            Download
-        </button>
+        <div id="cs2-content" class="tab-content active">
+            <h2>CS2 Features</h2>
+            <ul>
+                <li>✔ Clean & simple user interface</li>
+                <li>✔ Lightweight and fast performance</li>
+                <li>✔ Secure & (probably) undetected</li>
+                <li>✔ Frequent updates and improvements</li>
+            </ul>
+            
+            <button class="download-btn" onclick="window.location.href='https://rekonise.com/lavaware-rez5n';">
+                Download CS2 External
+            </button>
+            
+            <p class="fallback-link">If the button doesn't work, <a href="https://rekonise.com/lavaware-rez5n">click here</a>.</p>
+        </div>
         
-        <p class="fallback-link">If the button doesn't work, <a href="https://rekonise.com/lavaware-rez5n">click here</a>.</p>
+        <!-- Roblox Tab Content -->
+        <div id="roblox-content" class="tab-content">
+            <h2>Bleeding Blades Script Features</h2>
+            <ul class="roblox-features">
+                <li>✔ Kill Aura - Auto-attack nearby enemies</li>
+                <li>✔ Hitbox Expander - Larger hit detection</li>
+                <li>✔ Voice Spam - Audio disruption tool</li>
+                <li>✔ Undetected for over 1 year!</li>
+                <li>✔ Easy-to-use interface</li>
+            </ul>
+            
+            <button class="download-btn roblox-btn" onclick="copyScript()" id="copy-btn">
+                Copy Script to Clipboard
+            </button>
+            
+            <p class="fallback-link" id="copy-status" style="display:none;">Script copied to clipboard!</p>
+        </div>
     </div>
+
+    <script>
+        function showTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(tabName + '-content').classList.add('active');
+            
+            event.target.classList.add('active');
+        }
+        
+        window.copyScript = function() {
+            const scriptCode = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/curvedflame/Lavaware/refs/heads/main/bleedingblades.lua"))()';
+            
+            navigator.clipboard.writeText(scriptCode).then(function() {
+               
+                const status = document.getElementById('copy-status');
+                status.style.display = 'block';
+                status.style.color = '#00b2ff';
+                
+                setTimeout(() => {
+                    status.style.display = 'none';
+                }, 3000);
+            }).catch(function(err) {
+                const textArea = document.createElement('textarea');
+                textArea.value = scriptCode;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                const status = document.getElementById('copy-status');
+                status.style.display = 'block';
+                status.style.color = '#00b2ff';
+                
+                setTimeout(() => {
+                    status.style.display = 'none';
+                }, 3000);
+            });
+        }
+    </script>
 </body>
 </html>
